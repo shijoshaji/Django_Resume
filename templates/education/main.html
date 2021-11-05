@@ -1,31 +1,35 @@
 <div class="section" id="education">
     <div class="container cc-education">
         <div class="h4 text-center mb-4 title">Academics</div>
+
+        {% for academic in education %}
+
+
+
         <div class="card">
             <div class="row">
                 <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
                     <div class="card-body cc-education-header">
-                        <p>2013 - 2015</p>
-                        <div class="h5">Master's Degree</div>
+                        <p>{{academic.year_of_passing}}</p>
+                        <div class="h5">{{academic.level}}</div>
                     </div>
                 </div>
                 <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
                     <div class="card-body">
-                        <div class="h5">Master of Information Technology</div>
-                        <p class="category">University of Computer Science</p>
-                        <p>Euismod massa scelerisque suspendisse fermentum habitant vitae ullamcorper magna quam
-                            iaculis,
-                            tristique sapien taciti mollis interdum sagittis libero nunc inceptos tellus,
-                            hendrerit vel eleifend
-                            primis lectus quisque cubilia sed mauris. Lacinia porta vestibulum diam integer
-                            quisque eros
-                            pulvinar curae, curabitur feugiat arcu vivamus parturient aliquet laoreet at, eu
-                            etiam pretium
-                            molestie ultricies sollicitudin dui.</p>
+                        <div class="h5">{{academic.course}}</div>
+                        <p class="category">{{academic.college}}</p>
+                        <p>{{academic.description}}</p>
                     </div>
                 </div>
             </div>
         </div>
+
+
+
+        {% endfor %}
+
+
+        <!--         
         <div class="card">
             <div class="row">
                 <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
@@ -75,6 +79,6 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
 </div>
