@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+<!-- Include Header part -->
+{% include "utils/header.html" %}
+
+<div class="page-content">
+    <div>
+        <!-- Include Basic page part -->
+        {% include "utils/basicprofile.html" %}
+        <!-- Include About part -->
+        {% include "about/main.html" %}
+        <!-- Include Skiils part -->
+        {% include "skills/main.html" %}
+        <!-- Include Portfolio part -->
+        {% include "portfolio/main.html" %}
+        <!-- Include Experience part -->
+        {% include "experience/main.html" %}
+        <!-- Include Education part -->
+        {% include "education/main.html" %}
+        <!-- Include Reference part -->
+        {% include "references/main.html" %}
+        <!-- Include Contact details  -->
+        {% include "contact/main.html" %}
+    </div>
+</div>
+<!-- Include the footer of the page -->
+{% include 'utils/footer.html' %}
+
+
+{% endblock content %}
