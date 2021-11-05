@@ -7,9 +7,9 @@ from .models import (SocialMedia, Academics)
 
 @admin.register(SocialMedia)
 class SocialMediaAdmin(admin.ModelAdmin):
-    list_display = ('title', 'is_active')
+    list_display = ('title', 'is_active', 'updated_at')
 
 
 @admin.register(Academics)
 class AcademicsAdmin(admin.ModelAdmin):
-    list_display = ('course', 'is_active')
+    list_display = ('course', 'is_active', 'updated_at')
