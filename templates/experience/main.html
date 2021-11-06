@@ -1,19 +1,22 @@
 <div class="section" id="experience">
     <div class="container cc-experience">
-        <div class="h4 text-center mb-4 title">Professional Experience</div>
+        <div class="h4 text-center mb-4 title"><i class="fa fa-briefcase " aria-hidden="true"></i> Professional
+            Experience</div>
 
         {% for prof in profession %}
         <div class="card">
             <div class="row">
                 <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
                     <div class="card-body cc-experience-header">
-                        <p>{{prof.from_year}} - {{prof.to_year|default_if_none:"Present"}}</p>
-                        <div class="h5">{{prof.company}}</div>
+                        <p><i class="fa fa-calendar" aria-hidden="true"></i> {{prof.from_year}} -
+                            {{prof.to_year|default_if_none:"Present"}}
+                        </p>
+                        <div class="h5"><i class="fa fa-briefcase " aria-hidden="true"></i> {{prof.company}}</div>
                     </div>
                 </div>
                 <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
                     <div class="card-body">
-                        <div class="h5">{{prof.role}}</div>
+                        <div class="h5"><i class="fa fa-user-circle-o" aria-hidden="true"></i> {{prof.role}}</div>
                         <p>{{prof.description}}</p>
                     </div>
                 </div>

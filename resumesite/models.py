@@ -63,3 +63,17 @@ class Professional(BaseModel):
 
     def __str__(self):
         return f"{self.company} | {self.role}"
+
+
+class Skills(BaseModel):
+    skill = models.CharField(max_length=75, verbose_name='Skill Name')
+    scale = models.IntegerField(
+        default=50, verbose_name='Rating of skill', help_text='Enter a range from 0 -100')
+    is_key_skill = models.BooleanField(
+        default=False, verbose_name='Is this Tech Skill', help_text='Check MArk if this is technical skill')
+
+    class Meta:
+        ordering = ["-scale"]
+
+    def __str__(self):
+        return self.skill

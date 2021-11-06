@@ -1,37 +1,52 @@
 <div class="section" id="skill">
     <div class="container">
-        <div class="h4 text-center mb-4 title">Skills</div>
+        <div class="h4 text-center mb-4 title"><i class="fa fa-code " aria-hidden="true"></i> Tech Skills</div>
         <div class="card" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
             <div class="card-body">
                 <div class="row">
+
+                    {% for tech in tech_skills %}
+
+                    {% if tech.is_active %}
                     <div class="col-md-6">
-                        <div class="progress-container progress-primary"><span class="progress-badge">{HTML}</span>
+                        <div class="progress-container progress-primary"><span
+                                class="progress-badge">{{tech.skill}}</span>
                             <div class="progress">
                                 <div class="progress-bar progress-bar-primary" data-aos="progress-full"
                                     data-aos-offset="10" data-aos-duration="2000" role="progressbar" aria-valuenow="60"
-                                    aria-valuemin="0" aria-valuemax="100" style="width: 80%;"></div><span
-                                    class="progress-value">{80}%</span>
+                                    aria-valuemin="0" aria-valuemax="100" style="width:{{tech.scale}}%;"></div><span
+                                    class="progress-value">{{tech.scale}}%</span>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="progress-container progress-primary"><span class="progress-badge">CSS</span>
-                            <div class="progress">
-                                <div class="progress-bar progress-bar-primary" data-aos="progress-full"
-                                    data-aos-offset="10" data-aos-duration="2000" role="progressbar" aria-valuenow="60"
-                                    aria-valuemin="0" aria-valuemax="100" style="width: 40%;"></div><span
-                                    class="progress-value">75%</span>
-                            </div>
-                        </div>
-                    </div>
+
+                    {% endif %}
+
+                    {% endfor %}
 
 
                 </div>
-
             </div>
+        </div>
 
+        <div class="h4 text-center mb-4 title"><i class="fa fa-handshake-o" aria-hidden="true"></i> Non-Tech Skills
+        </div>
+        <div class="card" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+            <div class="card-body">
+                <div class="row">
+                    {% for non_tech in non_tech_skills %} {% if non_tech.is_active %}
+                    <div class="col-md-6">
+                        <div class="progress-container progress-primary"><span
+                                class="progress-badge"><i class="fa fa-check" aria-hidden="true"></i>{{non_tech.skill}}</span>
 
+                        </div>
+                    </div>
 
+                    {% endif %}
+
+                    {% endfor %}
+                </div>
+            </div>
         </div>
     </div>
 </div>
