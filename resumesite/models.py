@@ -53,13 +53,13 @@ class Professional(BaseModel):
     company = models.CharField(max_length=250, verbose_name='Company Name')
     description = models.TextField(
         max_length=1000, verbose_name='Explain about the role')
-    from_year = models.IntegerField(verbose_name='Year of Joining')
-    to_year = models.IntegerField(verbose_name='Year of Resign', null=True)
+    from_year = models.DateField(verbose_name='Year of Joining')
+    to_year = models.DateField(
+        verbose_name='Year of Resign', null=True, blank=True)
     is_active = models.BooleanField(default=True, verbose_name='ACtive Status')
-    # TODO: try date feilds, and for no to_year make a logic to update as present
 
     class Meta:
-        ordering = ["-to_year"]
+        ordering = ["-from_year"]
 
     def __str__(self):
         return f"{self.company} | {self.role}"
