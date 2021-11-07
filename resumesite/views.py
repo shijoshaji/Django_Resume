@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
 # Create your views here.
-from .models import SocialMedia, Academics, Professional, Skills
+from .models import SocialMedia, Academics, Professional, Skills, About
 from django.views.generic import TemplateView
 
 
@@ -20,10 +20,12 @@ class IndexView(TemplateView):
         professional_result = Professional.objects.filter(is_active=True)
         tech_skill = Skills.objects.filter(is_key_skill=True)
         non_tech_skill = Skills.objects.filter(is_key_skill=False)
+        abouts = About.objects.all()
 
         context["socialmedia"] = social_media_links
         context["education"] = academics_result
         context["profession"] = professional_result
         context["tech_skills"] = tech_skill
         context["non_tech_skills"] = non_tech_skill
+        context["about_me"] = abouts
         return context

@@ -12,6 +12,25 @@ class BaseModel(models.Model):
         abstract = True
 
 
+class About(BaseModel):
+    GENDER_CHOICE = (
+        ('M', 'Male'),
+        ('F', 'Female'),
+    )
+    name = models.CharField(max_length=50, verbose_name='Profile Name')
+    desp = models.TextField(max_length=2000, verbose_name='About Me')
+    gender = models.CharField(choices=GENDER_CHOICE, max_length=1,
+                              verbose_name=" Choose Sex")
+    age = models.IntegerField(default=18)
+    email = models.CharField(max_length=50, verbose_name='Email')
+    phone = models.CharField(max_length=50, verbose_name='Mobile Number')
+    location = models.CharField(
+        max_length=100, verbose_name='Current Location')
+
+    def __str__(self):
+        return self.name
+
+
 class SocialMedia(BaseModel):
     title = models.CharField(max_length=50)
     mediaURL = models.CharField(
@@ -67,6 +86,8 @@ class Professional(BaseModel):
 
 class Skills(BaseModel):
     skill = models.CharField(max_length=75, verbose_name='Skill Name')
+    skillurl = models.CharField(
+        max_length=300, verbose_name='Skill Logo URL', null=True, blank=True)
     scale = models.IntegerField(
         default=50, verbose_name='Rating of skill', help_text='Enter a range from 0 -100')
     is_key_skill = models.BooleanField(
