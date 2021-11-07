@@ -1,8 +1,8 @@
 from django.shortcuts import render
+from django.views.generic import TemplateView
 
 # Create your views here.
-from .models import SocialMedia, Academics, Professional, Skills, About
-from django.views.generic import TemplateView
+from .models import About, Academics, Professional, Skills, SocialMedia
 
 
 def landing_page(request):
@@ -18,8 +18,8 @@ class IndexView(TemplateView):
         social_media_links = SocialMedia.objects.filter(is_active=True)
         academics_result = Academics.objects.filter(is_active=True)
         professional_result = Professional.objects.filter(is_active=True)
-        tech_skill = Skills.objects.filter(is_key_skill=True)
-        non_tech_skill = Skills.objects.filter(is_key_skill=False)
+        tech_skill = Skills.objects.filter(is_key_skill=True,is_active=True)
+        non_tech_skill = Skills.objects.filter(is_key_skill=False,is_active=True)
         abouts = About.objects.all()
 
         context["socialmedia"] = social_media_links

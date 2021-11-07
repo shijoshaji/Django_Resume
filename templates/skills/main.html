@@ -7,7 +7,7 @@
 
                     {% for tech in tech_skills %}
 
-                    {% if tech.is_active %}
+
                     <div class="col-md-6">
                         <div class="progress-container progress-primary"><span class="progress-badge"><img
                                     src="{{tech.skillurl}}" alt="{{tech.skill}}"></span>
@@ -21,7 +21,7 @@
                         </div>
                     </div>
 
-                    {% endif %}
+
 
                     {% endfor %}
 
@@ -36,7 +36,8 @@
         <div class="card" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
             <div class="card-body">
                 <div class="row">
-                    {% for non_tech in non_tech_skills %} {% if non_tech.is_active %}
+                    {% for non_tech in non_tech_skills %}
+
                     <div class="col-md-6">
                         <div class="progress-container progress-primary"><span class="progress-badge"><i
                                     class="fa fa-check" aria-hidden="true"></i>{{non_tech.skill}}</span>
@@ -44,7 +45,7 @@
                         </div>
                     </div>
 
-                    {% endif %}
+
 
                     {% endfor %}
                 </div>
