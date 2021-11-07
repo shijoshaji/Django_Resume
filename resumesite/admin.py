@@ -1,5 +1,7 @@
 from django.contrib import admin
-from .models import (SocialMedia, Academics, Professional, Skills, About)
+
+from .models import (About, Academics, ContactProfile, Professional, Skills,
+                     SocialMedia)
 
 # Register your models here.
 # admin.site.register(SocialMedia)
@@ -32,3 +34,8 @@ class AboutAdmin(admin.ModelAdmin):
     # to not allow more than one record
     def has_add_permission(self, *args, **kwargs):
         return not About.objects.exists()
+
+
+@admin.register(ContactProfile)
+class ContactAdmin(admin.ModelAdmin):
+    list_display = ('name', 'subject', 'timestamp')

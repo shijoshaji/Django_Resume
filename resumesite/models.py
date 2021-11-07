@@ -6,7 +6,7 @@ from django.db import models
 class BaseModel(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-    is_active = models.BooleanField(default=True, verbose_name='ACtive Status')
+    is_active = models.BooleanField(default=True, verbose_name='Active Status')
 
     class Meta:
         abstract = True
@@ -26,6 +26,10 @@ class About(BaseModel):
     phone = models.CharField(max_length=50, verbose_name='Mobile Number')
     location = models.CharField(
         max_length=100, verbose_name='Current Location')
+
+    avatar = models.ImageField(blank=True, null=True, upload_to="avatar")
+    cv = models.FileField(blank=True, null=True, upload_to="cv")
+    bg = models.ImageField(blank=True, null=True, upload_to="bg")
 
     def __str__(self):
         return self.name
@@ -91,10 +95,25 @@ class Skills(BaseModel):
     scale = models.IntegerField(
         default=50, verbose_name='Rating of skill', help_text='Enter a range from 0 -100')
     is_key_skill = models.BooleanField(
-        default=False, verbose_name='Is this Tech Skill', help_text='Check MArk if this is technical skill')
+        default=False, verbose_name='Is this Tech Skill', help_text='Tick if this is technical skill')
 
     class Meta:
         ordering = ["-scale"]
 
     def __str__(self):
         return self.skill
+
+
+class ContactProfile(models.Model):
+
+    timestamp = models.DateTimeField(auto_now_add=True)
+    name = models.CharField(verbose_name="Name", max_length=100)
+    subject = models.CharField(verbose_name="Name", max_length=500)
+    email = models.EmailField(verbose_name="Email")
+    message = models.TextField(verbose_name="Message")
+
+    class Meta:
+        ordering = ["timestamp"]
+
+    def __str__(self):
+        return f'{self.name}'
