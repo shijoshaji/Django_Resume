@@ -18,6 +18,7 @@ class About(BaseModel):
         ('F', 'Female'),
     )
     name = models.CharField(max_length=50, verbose_name='Profile Name')
+    intro = models.CharField(max_length=150, verbose_name='One Line Intro')
     desp = models.TextField(max_length=2000, verbose_name='About Me')
     gender = models.CharField(choices=GENDER_CHOICE, max_length=1,
                               verbose_name=" Choose Sex")
@@ -102,18 +103,3 @@ class Skills(BaseModel):
 
     def __str__(self):
         return self.skill
-
-
-class ContactProfile(models.Model):
-
-    timestamp = models.DateTimeField(auto_now_add=True)
-    name = models.CharField(verbose_name="Name", max_length=100)
-    subject = models.CharField(verbose_name="Name", max_length=500)
-    email = models.EmailField(verbose_name="Email")
-    message = models.TextField(verbose_name="Message")
-
-    class Meta:
-        ordering = ["timestamp"]
-
-    def __str__(self):
-        return f'{self.name}'

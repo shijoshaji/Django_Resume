@@ -4,12 +4,6 @@ from django.contrib import messages
 
 # Create your views here.
 from .models import About, Academics, Professional, Skills, SocialMedia
-from .forms import ContactForm
-
-
-def landing_page(request):
-    template = "landingpage.html"
-    return render(request, template)
 
 
 class IndexView(TemplateView):
@@ -32,14 +26,3 @@ class IndexView(TemplateView):
         context["non_tech_skills"] = non_tech_skill
         context["about_me"] = abouts
         return context
-
-
-class ContactView(FormView):
-    template_name = "contact/main.html"
-    form_class = ContactForm
-    success_url = "/"
-
-    def form_valid(self, form):
-        form.save()
-        messages.success(self.request, 'Thank you. We will be in touch soon.')
-        return super().form_valid(form)

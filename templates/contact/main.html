@@ -1,73 +1,37 @@
 {% load static %}
 
 <div class="section" id="contact">
-    <div class="cc-contact-information" style="background-image: url('images/staticmap.png')">
+    <div class="cc-contact-information">
         <div class="container">
             <div class="cc-contact">
                 <div class="row">
                     <div class="col-md-9">
+                        <div class="h4 text-center title"><i class="fa fa-address-card-o" aria-hidden="true"></i>
+                            Contact Me</div>
                         <div class="card mb-0" data-aos="zoom-in">
-                            <div class="h4 text-center title"><i class="fa fa-address-card-o" aria-hidden="true"></i>
-                                Contact Me</div>
+
                             <div class="row">
-                                <div class="col-md-8">
-                                    <div class="card-body ">
-                                        <form action="/contact/" method="POST">
-                                            {% csrf_token %}
-                                            <div class="p pb-3"><strong>Fill the form</strong></div>
-                                            <div class="row mb-3">
-                                                <div class="col">
-                                                    <div class="input-group"><span class="input-group-addon"><i
-                                                                class="fa fa-user-circle"></i></span>
-                                                        <input class="form-control" type="text" name="name"
-                                                            placeholder="Name" required="required" />
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row mb-3">
-                                                <div class="col">
-                                                    <div class="input-group"><span class="input-group-addon"><i
-                                                                class="fa fa-file-text"></i></span>
-                                                        <input class="form-control" type="text" name="Subject"
-                                                            placeholder="Subject" required="required" />
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row mb-3">
-                                                <div class="col">
-                                                    <div class="input-group"><span class="input-group-addon"><i
-                                                                class="fa fa-envelope"></i></span>
-                                                        <input class="form-control" type="email" name="_replyto"
-                                                            placeholder="E-mail" required="required" />
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row mb-3">
-                                                <div class="col">
-                                                    <div class="form-group">
-                                                        <textarea class="form-control" name="message"
-                                                            placeholder="Your Message" required="required"></textarea>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col">
-                                                    <button class="btn btn-primary" type="submit">Send</button>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
+                                <!-- <div class="col-md-8"> -->
+                                <div class="card-body ">
+                                    <section>
+                                        <div class="container text-center">
+                                            <br>
+                                            {% for about in about_me %}
+                                            <i class="fa fa-envelope fa-2x" aria-hidden="true"></i>
+                                            <a class="cc-facebook btn btn-link"
+                                                href="mailto: {{about.email}}">{{about.email}}</a>
+                                            <br>
+                                            <i class="fa fa-mobile fa-2x" aria-hidden="true"></i>
+                                            <a class="cc-facebook btn btn-link"
+                                                href="tel:{{about.phone}}">{{about.phone}}</a>
+                                            {% endfor %}
+
+
+                                        </div>
+                                    </section>
                                 </div>
-                                <!-- <div class="col-md-6">
-                                    <div class="card-body">
-                                        <p class="mb-0"><strong>Address </strong></p>
-                                        <p class="pb-2">140, City Center, New York, U.S.A</p>
-                                        <p class="mb-0"><strong>Phone</strong></p>
-                                        <p class="pb-2">+1718-111-0011</p>
-                                        <p class="mb-0"><strong>Email</strong></p>
-                                        <p>anthony@company.com</p>
-                                    </div>
-                                </div> -->
+                                <!-- </div> -->
+
                             </div>
                         </div>
                     </div>
