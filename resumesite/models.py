@@ -28,9 +28,9 @@ class About(BaseModel):
     location = models.CharField(
         max_length=100, verbose_name='Current Location')
 
-    avatar = models.CharField(blank=True, null=True, max_length=2000,
+    avatar = models.CharField(blank=True, null=True, max_length=255,
                               verbose_name='URL to your Profile Pic')
-    cv = models.CharField(blank=True, null=True, max_length=2000,
+    cv = models.CharField(blank=True, null=True, max_length=255,
                           verbose_name='URL to your Resume')
 
     def __str__(self):
