@@ -7,13 +7,10 @@ from .models import About, Academics, Professional, Skills, SocialMedia, Customi
 
 
 class IndexView(TemplateView):
-    # val = CustomizeTemplate.objects.filter(is_active=True)
-    # design_num = val[0].id_num
-    # print('shijo', design_num)
+    val = CustomizeTemplate.objects.filter(is_active=True)
+    design_num = val[0].id_num
 
-    # template_name = f"landingpage_{design_num}.html"
-
-    template_name = f"landingpage_1.html"
+    template_name = f"landingpage_{design_num}.html"
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
