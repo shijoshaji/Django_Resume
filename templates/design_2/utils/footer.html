@@ -1,0 +1,28 @@
+<footer class="pt-4 pb-4 text-muted text-center d-print-none">
+    <div class="container">
+        <div class="my-3">
+
+            <div class="footer-nav">
+                <nav role="navigation">
+                    <ul class="nav justify-content-center">
+                        {% for each_link in socialmedia %}
+                        {% if each_link.is_active %}
+                        <li class="nav-item"><a class="nav-link" target="_blank" href="{{each_link.mediaURL}}"
+                                title="{{each_link.title}}"><i class="fab {{each_link.iconClass}}"></i><span
+                                    class="menu-title sr-only"></span></a>
+                        </li>
+                        {% endif %}
+                        {% endfor %}
+
+                    </ul>
+                </nav>
+            </div>
+
+        </div>
+        <hr />
+        <div class="text-small">
+            <div class="mb-1">&copy; Material Resume. All rights reserved.</div>
+            <div>Design - <a href="https://templateflip.com/" target="_blank">TemplateFlip</a></div>
+        </div>
+    </div>
+</footer>

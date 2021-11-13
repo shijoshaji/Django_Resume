@@ -1,0 +1,15 @@
+<div class="header-social mb-3 d-print-none" data-aos="zoom-in" data-aos-delay="200">
+    <nav role="navigation">
+        <ul class="nav justify-content-center">
+            {% for each_link in socialmedia %}
+            {% if each_link.is_active %}
+            <li class="nav-item"><a class="nav-link" target="_blank" href="{{each_link.mediaURL}}"
+                    title="{{each_link.title}}"><i class="fab {{each_link.iconClass}}"></i><span
+                        class="menu-title sr-only"></span></a>
+            </li>
+
+            {% endif %}
+            {% endfor %}
+        </ul>
+    </nav>
+</div>

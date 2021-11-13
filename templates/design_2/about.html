@@ -1,0 +1,49 @@
+{% load static %}
+
+<div class="shadow-1-strong bg-white my-5 p-5" id="about">
+    <div class="about-section">
+        <div class="row">
+            {% for about in about_me %}
+            <div class="col-md-6">
+                <h2 class="h2 fw-light mb-4">About Me</h2>
+                <p>Hello! I’m {{about.name}}. </p>
+                <p>{{about.desp}}</p>
+            </div>
+            <div class="col-md-5 offset-lg-1">
+                <div class="row mt-2">
+                    <h2 class="h2 fw-light mb-4">Bio</h2>
+                    <div class="col-sm-5">
+                        <div class="pb-2 fw-bolder"><i class="far fa-calendar-alt pe-2 text-muted"
+                                style="width:24px;opacity:0.85;"></i> </div>
+                    </div>
+                    <div class="col-sm-7">
+                        <div class="pb-2">{{about.age}}</div>
+                    </div>
+                    <div class="col-sm-5">
+                        <div class="pb-2 fw-bolder"><i class="far fa-envelope pe-2 text-muted"
+                                style="width:24px;opacity:0.85;"></i> </div>
+                    </div>
+                    <div class="col-sm-7">
+                        <div class="pb-2"><a href="mailto: {{about.email}}">{{about.email}}</a></div>
+                    </div>
+
+                    <div class="col-sm-5">
+                        <div class="pb-2 fw-bolder"><i class="fas fa-phone pe-2 text-muted"
+                                style="width:24px;opacity:0.85;"></i> </div>
+                    </div>
+                    <div class="col-sm-7">
+                        <div class="pb-2"><a href="tel:{{about.phone}}">{{about.phone}}</a></div>
+                    </div>
+                    <div class="col-sm-5">
+                        <div class="pb-2 fw-bolder"><i class="fas fa-map-marker-alt pe-2 text-muted"
+                                style="width:24px;opacity:0.85;"></i> </div>
+                    </div>
+                    <div class="col-sm-7">
+                        <div class="pb-2">{{about.location}}</div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>

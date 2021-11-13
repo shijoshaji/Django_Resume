@@ -12,6 +12,15 @@ class BaseModel(models.Model):
         abstract = True
 
 
+class CustomizeTemplate(BaseModel):
+
+    name = models.CharField(max_length=50, verbose_name='Template Name')
+    id_num = models.IntegerField(verbose_name='Design Number')
+
+    def __str__(self):
+        return self.name
+
+
 class About(BaseModel):
     GENDER_CHOICE = (
         ('M', 'Male'),

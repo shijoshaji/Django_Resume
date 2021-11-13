@@ -1,0 +1,49 @@
+{% extends 'design_2/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+
+<!-- Include Header part -->
+{% include "design_2/utils/header.html" %}
+
+<div class="page-content">
+    <div class="container">
+        <div class="resume-container">
+
+            <!-- Include Basic page part -->
+            {% include "design_2/utils/basicprofile.html" %}
+            <!-- Include About part -->
+            {% include "design_2/about.html" %}
+            <!-- Include Skiils part -->
+            {% include "design_2/skills.html" %}
+            <!-- Include Experience part -->
+            {% include "design_2/experience.html" %}
+            <!-- Include Education part -->
+            {% include "design_2/education.html" %}
+            <!-- Include Reference part -->
+            {% include "design_2/references.html" %}
+            <!-- Include Portfolio part -->
+            <!-- {% include "design_1/portfolio.html" %} -->
+            <!-- Include Contact details  -->
+            {% include "design_2/contact.html" %}
+
+
+
+
+
+
+
+
+
+        </div>
+    </div>
+</div>
+
+
+<!-- Include the footer of the page -->
+{% include 'design_2/utils/footer.html' %}
+
+
+{% endblock content %}

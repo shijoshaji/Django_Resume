@@ -1,10 +1,15 @@
 from django.contrib import admin
 
 from .models import (About, Academics,  Professional, Skills,
-                     SocialMedia)
+                     SocialMedia, CustomizeTemplate)
 
 # Register your models here.
 # admin.site.register(SocialMedia)
+
+
+@admin.register(CustomizeTemplate)
+class CustomizeTemplateAdmin(admin.ModelAdmin):
+    list_display = ('name', 'id_num', 'is_active', 'updated_at')
 
 
 @admin.register(SocialMedia)
