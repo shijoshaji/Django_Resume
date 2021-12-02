@@ -3,8 +3,7 @@ Django Resume Application, where we can change things in backend
 
 ## Tech:
 
-> Basic HTML,CSS & JS
-> Python & Django hosted in Heroku.
+> HTML,CSS, JS, Python & Django hosted in Heroku.
 
 ## About:
 
